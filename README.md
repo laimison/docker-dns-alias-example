@@ -1,6 +1,6 @@
 # docker-dns-alias-example
 
-## Some Posts to Explore
+## Some Links for More Details
 
 https://stackoverflow.com/questions/33695702/how-can-i-add-hostnames-to-a-container-on-the-same-docker-network
 
