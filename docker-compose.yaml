@@ -1,0 +1,29 @@
+version: '3.5'
+
+# docker network create dns-alias
+# docker-compose build && docker-compose down && docker-compose up -d && docker-compose ps
+# docker network disconnect dns-alias my-centos
+# docker network connect --alias my-centos-alias dns-alias my-centos
+
+networks:
+  default:
+    external:
+      name: dns-alias
+
+services:
+  my-centos:
+    container_name: my-centos
+    hostname: my-centos
+    build:
+      context: .
+      dockerfile: Dockerfile-centos
+    command: >
+      bash -c "tail -F /dev/null"
+  my-centos-2:
+    container_name: my-centos-2
+    hostname: my-centos-2
+    build:
+      context: .
+      dockerfile: Dockerfile-centos
+    command: >
+      bash -c "tail -F /dev/null"
